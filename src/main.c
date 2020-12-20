@@ -16,9 +16,6 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "rt_test_root.h"
-#include "oslib_test_root.h"
-
 #include "usbcfg.h"
 
 /*
@@ -78,8 +75,6 @@ int main(void) {
    */
   while (true) {
     if (!palReadLine(BUTTON)) {
-      test_execute((BaseSequentialStream *)&SD1, &rt_test_suite);
-      test_execute((BaseSequentialStream *)&SD1, &oslib_test_suite);
     }
     chThdSleepMilliseconds(500);
   }
